@@ -18,7 +18,7 @@ contract MyToken{
 // burn function
     function burnToken (address _address, uint _value)public{
         if(rulers[_address]>= _value){
-            totalSupply += _value;
+            totalSupply -= _value;
             rulers[_address] -= _value;
         }
     }
