@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.25;
 contract MyToken{
-    string public tokenName = "META";
-    string public tokenAbbrv = "MTA";
+    string public tokenName = "Samridh";
+    string public tokenAbbrv = "GT";
     uint public totalSupply = 0;
-    mapping(address => uint) public balances;
-    function mint(address _address,uint _value)public{
+    mapping(address => uint) public rulers;
+    function mintToken(address _address,uint _value)public{
         totalSupply += _value;
-        balances[_address] += _value;
+        rulers[_address] += _value;
     }
-    function burn (address _address, uint _value)public{
-        if(balances[_address]>= _value){
+    function burnToken (address _address, uint _value)public{
+        if(rulers[_address]>= _value){
             totalSupply += _value;
-            balances[_address] -= _value;
+            rulers[_address] -= _value;
         }
     }
 }
