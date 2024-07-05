@@ -1,6 +1,6 @@
 # ETH Proof  beginner  Assignment 
 
-Simple overview of use/purpose.
+A simple overview of use/purpose.
 
 ## Description
 
@@ -37,54 +37,6 @@ pragma solidity 0.8.18;
        to the amount that is supposed to be burned.
 */
 
-contract MyToken {
 
-    // public variables here
-    string  public tokenName = "Mystic Coin";
-    string public tokenNot  = "MC";
-    uint256 public totalSupply = 0;
-
-
-
-
-    // mapping variable here
-        mapping (address => uint256) public accounts;
-
-    // mint function
-    function mintToken(address _address ,uint256 _value ) public {
-            totalSupply+=_value;
-            accounts[_address] += _value;
-            
-    }
-    // burn function
-        function burnToken(address _address ,uint256 _value ) public  {
-            if(accounts[_address]>=_value){
-
-            totalSupply -=_value;
-            accounts[_address] -= _value;
-            }   
-            
-    }
-
-}
 
 ```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
