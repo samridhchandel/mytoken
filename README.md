@@ -36,7 +36,27 @@ pragma solidity 0.8.18;
     5. Lastly, your burn function should have conditionals to make sure the balance of "sender" is greater than or equal 
        to the amount that is supposed to be burned.
 */
+contract MyToken{
 
+// public variables here
+    string public tokenName = "Samridh";
+    string public tokenAbbrv = "GT";
+    uint public totalSupply = 0;
 
+// mapping variable here
+    mapping(address => uint) public rulers;
 
+//mint function
+    function mintToken(address _address,uint _value)public{
+        totalSupply += _value;
+        rulers[_address] += _value;
+    }
+// burn function
+    function burnToken (address _address, uint _value)public{
+        if(rulers[_address]>= _value){
+            totalSupply -= _value;
+            rulers[_address] -= _value;
+        }
+    }
+}
 ```
